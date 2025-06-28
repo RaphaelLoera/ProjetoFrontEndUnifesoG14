@@ -1,7 +1,7 @@
 ## Nome Dos Integrantes do Grupo
-Raphael Correia Soares Loera
-Julio Cesar De Souza Geraldo
-Valdely Da Costa Francisco Junior
+- Raphael Correia Soares Loera
+- Julio Cesar De Souza Geraldo
+- Valdely Da Costa Francisco Junior
 
 
 # Circuito Terê Verde
