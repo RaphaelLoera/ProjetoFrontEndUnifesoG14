@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsividade -->
+  <title>Parnaso</title> <!-- Título da aba -->
+  <!-- Icones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS do parque -->
+  <link rel="stylesheet" href="../css/parnaso.css" />
+</head>
+
+<body>
+  <!-- =========================
+       CABEÇALHO E NAVEGAÇÃO
+       ========================= -->
+  <header class="menu-principal">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item-inicio">
+          <a href="../index.html" class="nav-link">Início</a>
+        </li>
+        <li class="nav-item-trilhas">
+          <a href="parnaso.html" class="nav-link">Parque Nacional</a>
+        </li>
+        <li class="nav-item-eventos">
+          <a href="trespicos.html" class="nav-link">Três Picos</a>
+        </li>
+        <li class="nav-item">
+          <a href="parque-montahas.html" class="nav-link">Parque Montanhas</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Botão do menu mobile -->
+    <button onclick="animarMenu()" id="btn-menu">
+      <i class="fa-solid fa-bars" style="color: #0b0c0d;"></i>
+    </button>
+    <!-- Menu mobile -->
+    <nav class="menu-mobile" id="menu-mobile">
+      <ul class="nav-menu">
+        <li class="nav-item-inicio">
+          <a href="../index.html" class="nav-link">Início</a>
+        </li>
+        <li class="nav-item-trilhas">
+          <a href="parnaso.html" class="nav-link">Parque Nacional</a>
+        </li>
+        <li class="nav-item-eventos">
+          <a href="trespicos.html" class="nav-link">Três Picos</a>
+        </li>
+        <li class="nav-item">
+          <a href="parque-montahas.html" class="nav-link">Parque Montanhas</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       TOPO DA PÁGINA (IMAGEM E TÍTULO)
+       ========================= -->
+  <section id="pack1" class="topo">
+    <img class=""> <!-- Imagem de destaque (faltando src, pode ser decorativa) -->
+    <h1>Parque Nacional da Serra dos Órgãos</h1> <!-- Título sobre a imagem -->
+  </section>
+
+  <main>
+    <!-- =========================
+         SEÇÃO 1: INTRODUÇÃO
+         ========================= -->
+    <section class="item1">
+      <h1>Parque Nacional da Serra dos Órgãos</h1>
+      <p>
+        O Parque Nacional da Serra dos Órgãos foi criado em 30 de novembro
+        de 1939 como o terceiro parque nacional do Brasil. O objetivo do
+        parque era proteger as cabeceiras dos rios que correm para a bacia
+        fluminense e proteger as montanhas espetaculares. O parque foi
+        criado pelo governo de Getúlio Vargas pelo decreto lei 1822 de 30
+        de novembro de 1939 com uma área de cerca de 9.000 hectares.
+        Abrangia partes dos municípios de Magé, Petrópolis e Teresópolis.
+      </p>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 2: BIODIVERSIDADE E ECOSSISTEMAS
+         ========================= -->
+    <section class="item2">
+      <div class="imagem2">
+        <img src="../img/jaguatirica.png" alt="foto1" /> <!-- Imagem ilustrativa -->
+      </div>
+      <div class="texto1">
+        <h2>Biodiversidade e ecossistemas</h2>
+        <p>
+          O Parque Nacional da Serra dos Órgãos (PARNASO) abriga uma das
+          maiores expressões da Mata Atlântica de altitude no Brasil. A
+          combinação de diferentes altitudes, clima e relevo cria uma
+          grande variedade de ecossistemas, que sustentam uma
+          biodiversidade rica e muitas vezes endêmica.
+        </p>
+        <p>
+          O parque é lar de diversas espécies ameaçadas de extinção e
+          endêmicas.São registradas mais de: 450 espécies de aves, como o
+          gavião-pomba, tucano-de-bico-preto, jacutinga e sabiá-pimenta,
+          100 espécies de mamíferos,
+          como:Jaguatirica,Mico-estrela,Gato-maracajá.
+        </p>
+        <p>
+          A flora é extremamente variada, com destaque para: Bromélias e
+          orquídeas, muitas raras e endêmicas, Samambaias
+          arbóreas,Palmeiras nativas, Árvores de grande porte, como
+          jequitibás, canelas e cedros
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 3: CARDS DE INFORMAÇÃO
+         ========================= -->
+    <section class="item3">
+      <div class="card">
+        <img src="../img/Logo1.png" alt="icon" />
+        <p>
+          Cuidar da natureza é essencial para preservar a vida e os
+          ecossistemas. Ao visitar áreas naturais, é importante não deixar
+          lixo, evitar barulho excessivo e respeitar plantas e animais.
+          Pequenas atitudes garantem a conservação para as futuras
+          gerações.
+        </p>
+      </div>
+      <div class="card">
+        <img src="../img/logo2.png" alt="icon" />
+        <p>
+          Acampar é uma forma de conexão com a natureza que exige
+          planejamento e respeito ao meio ambiente. É importante escolher
+          um bom local, levar equipamentos adequados e manter a área
+          limpa. A experiência oferece tranquilidade, contato com a fauna
+          e paisagens únicas.
+        </p>
+      </div>
+      <div class="card">
+        <img src="../img/logo3.png" alt="icon" />
+        <p>
+          A escalada é um esporte de aventura que envolve técnica, força e
+          concentração para vencer paredes rochosas ou artificiais.
+          Praticada com equipamentos de segurança, promove contato direto
+          com a natureza. É comum em parques como o da Serra dos Órgãos,
+          famoso por suas formações rochosas.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 4: INFORMAÇÕES DO PARQUE
+         ========================= -->
+    <section class="item4">
+      <div>
+        <h2>Parque Nacional da Serra dos Órgãos</h2>
+        <h3>Atividades:</h3>
+        <p>
+          O parque é famoso por suas opções de esportes de montanha, como
+          escalada, caminhada e rapel, além de oferecer diversas
+          cachoeiras e trilhas.
+        </p>
+        <h3>Trilhas:</h3>
+        <p>
+          O parque possui a maior rede de trilhas do Brasil, com opções
+          para todos os níveis de experiência, com mais de 200 km de
+          extensão.
+        </p>
+        <h3>Canais de atendimento:</h3>
+        <p>
+          Para informações sobre visitação, agendamento de atividades e
+          outros assuntos, você pode entrar em contato com a administração
+          do parque por telefone (61) 2028-9913 / (21) 9.78962463
+          (WhatsApp) ou por e-mail parnaso@icmbio.gov.br.
+        </p>
+        <h3>Horário de funcionamento:</h3>
+        <p>
+          O parque está aberto diariamente, das 8h às 17h. É importante
+          verificar se há necessidade de agendamento prévio para algumas
+          atividades.
+        </p>
+        <h3>Melhor época para visitar:</h3>
+        <p>
+          A época mais propícia para atividades como trilhas e escaladas é
+          durante o inverno, quando as chuvas são menos frequentes,
+          enquanto no verão as cachoeiras e poços são mais procurados.
+        </p>
+      </div>
+      <div class="imagem2">
+        <img src="../img/IMG-20250528-WA0011.jpg" alt="foto1" /> <!-- Imagem ilustrativa do parque -->
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 5: MAPA DE LOCALIZAÇÃO
+         ========================= -->
+    <section class="item5">
+      <h2>Como chegar</h2>
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d46620.33348613835!2d-43.08082049632025!3d-22.481054204535564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparque%20serra%20dos%20%C3%B3rg%C3%A3os!5e1!3m2!1spt-BR!2sbr!4v1749848867479!5m2!1spt-BR!2sbr"
+          width="300" height="100" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       RODAPÉ
+       ========================= -->
+  <footer>
+    <p>©2025-Circuito Terê Verde.</p>
+  </footer>
+
+  <!-- =========================
+        SCRIPTS
+        ========================= -->
+    <script src="../js/parque-script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style_adm.css" />
+    
+    <title>Administração do site</title>
+  </head>
+  <body>
+    <script>
+    if (!localStorage.getItem('usuarioLogado') && !sessionStorage.getItem('usuarioLogado')) {
+      window.location.href = "html/adm.html";
+    }
+  </script>
+    
+    <header>
+      <nav>
+        <a href="../index.html">Início</a>
+        <a href="adm-trilhas.html">Trilhas</a>
+        <a href="../index.html"onclick="logout()">Sair</a>
+
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Administração do site</h1>
+        <p>Bem-vindo à área de administração do site!</p>
+        <p>
+          Você pode gerenciar o conteúdo e as configurações do site a partir
+          daqui.
+        </p>
+
+        <!-- Formulário 1 -->
+        <div class="form-container">
+          <form>
+            <h3>Gerenciar Eventos</h3>
+            <!-- CAMPO NOME DO EVENTO -->
+            <label for="hora">Evento:</label>
+            <input type="text" placeholder="Evento" />
+            <!-- CAMPO ESCOLHA PARQUE -->
+            <label for="item">Escolha o parque:</label>
+            <select id="item" name="item" required>
+              <option value="">-- Selecione --</option>
+              <option value="item1">Evento 1</option>
+              <option value="item2">Evento 2</option>
+              <option value="item3">Evento 3</option>
+            </select>
+            <!-- CAMPO DATA -->
+            <label for="hora">Data do evento:</label>
+            <input type="date" placeholder="#" />
+            <!-- CAMPO horario -->
+            <div class="time">
+              <div class="time-inicio">            
+                <label for="hora">Início:</label>
+                <input type="time" name="hora" />
+              </div>              
+              <div class="time-fim">
+                  <label for="hora">Término:</label>                
+                  <input type="time" name="hora" />
+              </div>
+            </div>
+            
+            <button type="submit">Salvar</button>
+          </form>
+
+         
+    </main>
+    <footer>
+      <p>&copy; 2025 Circuito Terê Verde. Todos os direitos reservados.</p>
+    </footer>
+       <script src="../js/script.js"></script>
+       
+
+  </body>
+</html>

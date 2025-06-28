@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsividade -->
+  <title>Parque Montanhas</title> <!-- Título da aba -->
+  <!-- Icones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS do parque -->
+  <link rel="stylesheet" href="../css/parque-montanhas.css" />
+</head>
+
+<body>
+  <!-- =========================
+       CABEÇALHO E NAVEGAÇÃO
+       ========================= -->
+  <header class="menu-principal">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item-inicio">
+          <a href="../index.html" class="nav-link">Início</a>
+        </li>
+        <li class="nav-item-trilhas">
+          <a href="parnaso.html" class="nav-link">Parque Nacional</a>
+        </li>
+        <li class="nav-item-eventos">
+          <a href="trespicos.html" class="nav-link">Três Picos</a>
+        </li>
+        <li class="nav-item">
+          <a href="parque-montahas.html" class="nav-link">Parque Montanhas</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Botão do menu mobile -->
+    <button onclick="animarMenu()" id="btn-menu">
+      <i class="fa-solid fa-bars" style="color: #0b0c0d;"></i>
+    </button>
+    <!-- Menu mobile -->
+    <nav class="menu-mobile" id="menu-mobile">
+      <ul class="nav-menu">
+        <li class="nav-item-inicio">
+          <a href="../index.html" class="nav-link">Início</a>
+        </li>
+        <li class="nav-item-trilhas">
+          <a href="parnaso.html" class="nav-link">Parque Nacional</a>
+        </li>
+        <li class="nav-item-eventos">
+          <a href="trespicos.html" class="nav-link">Três Picos</a>
+        </li>
+        <li class="nav-item">
+          <a href="parque-montahas.html" class="nav-link">Parque Montanhas</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       TOPO DA PÁGINA (IMAGEM E TÍTULO)
+       ========================= -->
+  <section id="pack1" class="topo">
+    <img class=""> <!-- Imagem de destaque (faltando src, pode ser decorativa) -->
+    <h1>Parque Montanhas De Teresópolis</h1> <!-- Título sobre a imagem -->
+  </section>
+
+  <main>
+    <!-- =========================
+         SEÇÃO 1: INTRODUÇÃO
+         ========================= -->
+    <section class="item1">
+      <h1>Parque Montanhas de Teresópolis</h1>
+      <p>
+        O Parque Natural Municipal Montanhas de Teresópolis é um verdadeiro tesouro da Mata Atlântica, localizado na
+        região serrana do Rio de Janeiro.<br>
+        Criado em 2009, ele abrange cerca de 4.397 hectares e é a maior unidade de conservação municipal totalmente
+        protegida do estado.<br>
+        O parque possui três núcleos principais: Santa Rita, Pedra da Tartaruga e Iconha. Cada um oferece experiências
+        únicas:<br>
+        Pedra da Tartaruga: um dos cartões-postais do parque, com trilhas acessíveis, áreas para acampamento e prática
+        de rapel. <br>
+        A vista do topo é de tirar o fôlego.
+        Santa Rita: sede principal, com centro de visitantes, trilhas como a da Pedra Alpina e do Jacu, além de áreas
+        de lazer e um parquinho infantil.<br>
+        Iconha: voltado para pesquisa e também com trilhas encantadoras.
+      </p>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 2: BIODIVERSIDADE E ECOSSISTEMAS
+         ========================= -->
+    <section class="item2">
+      <div class="imagem2">
+        <img src="../img/tangara.jpg" alt="foto1" /> <!-- Imagem ilustrativa -->
+      </div>
+      <div class="texto1">
+        <h2>Biodiversidade e ecossistemas</h2>
+        <p>
+          A biodiversidade do Parque Natural Municipal Montanhas de Teresópolis é simplesmente espetacular,
+          um verdadeiro refúgio da Mata Atlântica, um dos biomas mais ricos e ameaçados do planeta.
+        </p>
+        <p>
+          O parque abriga uma impressionante variedade de espécies.<br>
+          Mamíferos: como o gato-do-mato-pequeno (Leopardus guttulus), sagui-da-serra (Callithrix aurita),
+          tatu-galinha (Dasypus novemcinctus), cachorro-do-mato (Cerdocyon thous)
+          e até a imponente sussuarana (Puma concolor).
+          Aves: é um paraíso para observadores de pássaros, com espécies como o tucano-de-bico-preto, araponga,
+          tangará e muitas outras.<br>
+          Répteis e anfíbios: como a rã-de-corredeira (Hylodes phyllodes) e o cágado pescoço-de-cobra (Hydromedusa
+          tectifera).<br>
+          Além disso, o parque funciona como um corredor ecológico entre outras unidades de conservação da Serra dos
+          Órgãos, <br>
+          o que é essencial para a conectividade entre populações de fauna e a preservação de espécies ameaçadas.
+        </p>
+        <p>
+          O parque abriga cerca de 196 espécies de plantas, sendo que 20 estão ameaçadas de extinção. Além de sua
+          importância ecológica,<br>
+          a vegetação atua como um filtro natural, purificando o ar,<br>
+          regulando o clima e oferecendo sombra e umidade, especialmente valiosos nos dias quentes de verão.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 3: CARDS DE INFORMAÇÃO
+         ========================= -->
+    <section class="item3">
+      <div class="card">
+        <img src="../img/Logo1.png" alt="icon" />
+        <p>
+          Acampe apenas na área demarcada da sede Pedra da Tartaruga, é o único local autorizado para camping.<br>
+          Fogueiras são proibidas, assim como churrasqueiras e qualquer tipo de instrumento sonoro (caixas de som, por
+          exemplo).<br>
+          Não leve animais domésticos, pois eles podem interferir na fauna local.<br>
+          Evite bebidas alcoólicas e não solte pipas no parque.
+        </p>
+      </div>
+      <div class="card">
+        <img src="../img/logo2.png" alt="icon" />
+        <p>
+          A área de camping do Parque Natural Municipal Montanhas de Teresópolis fica na sede da Pedra da Tartaruga e
+          foi planejada para proporcionar uma experiência imersiva na natureza. Ela está localizada a cerca de 50
+          metros dos banheiros,<br>
+          com um visual deslumbrante das montanhas ao redor.
+        </p>
+      </div>
+      <div class="card">
+        <img src="../img/logo3.png" alt="icon" />
+        <p>
+          Espaço coletivo: é uma área compartilhada, então o respeito ao silêncio (especialmente após as 22h) e à
+          natureza é essencial.<br>
+          Infraestrutura: há banheiros simples e uma ducha fria ao ar livre. Não há energia elétrica nem chuveiros
+          quentes.<br>
+          Regras: é proibido acender fogueiras, usar caixas de som ou acampar fora da área demarcada. Também não são
+          permitidos animais de estimação.<br>
+          Acesso: é necessário chegar até as 17h e preencher um termo de responsabilidade para acampar.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 4: INFORMAÇÕES DO PARQUE
+         ========================= -->
+    <section class="item4">
+      <div>
+        <h2>Parque Montanhas De Teresópolis</h2>
+        <h3>Atividades:</h3>
+        <p>
+          Caminhadas ecológicas, observação de aves, rapel e escalada são os destaques.
+          Também há áreas para piqueniques e contemplação da natureza nas duas sedes.
+        </p>
+        <h3>Trilhas:</h3>
+        <p>
+          O parque oferece trilhas de diferentes níveis, como a da Tartaruga, Camelo e Alpina.<br>
+          Cada uma proporciona vistas incríveis e contato direto com a fauna e flora local.
+        </p>
+        <h3>Canais de atendimento:</h3>
+        <p>
+          (21) 2741-2234 Endereço: Rua Francisco Acquarone, 573 – Teresópolis, RJ.
+        </p>
+        <h3>Horário de funcionamento:</h3>
+        <p>
+          Aberto de terça a domingo, das 8h às 17h. Fechado às segundas-feiras para
+          manutenção e preservação.
+        </p>
+        <h3>Melhor época para visitar:</h3>
+        <p>
+          A melhor época para visitar o Parque Natural Municipal Montanhas de Teresópolis<br>
+          é entre abril e setembro, quando o clima está mais seco e ideal para trilhas. No verão (dezembro a março), o parque fica mais verde, mas chove com frequência.
+        </p>
+      </div>
+      <div class="imagem2">
+        <img src="../img/logo-montanhas-teresopolis.webp" alt="foto1" /> <!-- Imagem ilustrativa do parque -->
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO 5: MAPA DE LOCALIZAÇÃO
+         ========================= -->
+    <section class="item5">
+      <h2>Como chegar</h2>
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d41741.913017970925!2d-42.98122838003577!3d-22.372549010193538!3m2!1i1024!2i768!4f13.1!2m1!1sparque%20montanhas%20teres%C3%B3polis%20pass%C3%A1ros!5e0!3m2!1spt-BR!2sbr!4v1750788907125!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       RODAPÉ
+       ========================= -->
+  <footer>
+    <p>©2025-Circuito Terê Verde.</p>
+  </footer>
+
+  <!-- =========================
+        SCRIPTS
+        ========================= -->
+    <script src="../js/parque-script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!-- =========================
+     ESTRUTURA BÁSICA E METADADOS
+     ========================= -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+
+   <!-- Swiper CSS para carrossel de slides -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Otimiza carregamento da fonte -->
+
+   <!-- Fonte Montserrat do Google Fonts -->
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+
+   <!-- Icones Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- CSS principal do site -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <title>Circuito Terê Verde</title> <!-- Título da aba -->
+</head>
+
+<body>
+   <!-- =========================
+        CABEÇALHO E NAVEGAÇÃO
+        ========================= -->
+   <header class="menu-principal">
+      <nav class="navbar">
+         <ul class="nav-menu">
+            <li class="nav-item-inicio">
+               <a href="#inicio" class="nav-link">Início</a>
+            </li>
+            <li class="nav-item-trilhas">
+               <a href="#trilhas" class="nav-link">Trilhas</a>
+            </li>
+            <li class="nav-item-eventos">
+               <a href="#eventos" class="nav-link">Eventos</a>
+            </li>
+            <li class="nav-item">
+               <a href="#contatos" class="nav-link">Contatos</a>
+            </li>
+            <li class="nav-item">
+               <a class="botao-login" onclick="abrirPopup()">Login</a>
+            </li>
+            
+         </ul>
+         
+      </div>
+      </nav>
+      
+      <!-- Menu mobile (hamburguer) -->
+      <button onclick="animarMenu()" id="btn-menu">
+         <i class="fa-solid fa-bars" style="color: #f6f7f9;"></i>
+      </button>
+      <nav class="menu-mobile" id="menu-mobile">
+         <ul class="nav-menu">
+            <li class="nav-item-inicio">
+               <a href="#inicio" class="nav-link">Início</a>
+            </li>
+            <li class="nav-item-trilhas">
+               <a href="#trilhas" class="nav-link">Trilhas</a>
+            </li>
+            <li class="nav-item-eventos">
+               <a href="#eventos" class="nav-link">Eventos</a>
+            </li>
+            <li class="nav-item">
+               <a href="#contatos" class="nav-link">Contatos</a>
+            </li>
+            <li class="nav-item">
+               <a class="mobile-login" onclick="abrirPopup()">Login</a>
+            </li>
+         </ul>
+      </nav>
+   </header>
+
+   <div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>Login</h2>
+    <input type="text" id="usuario" placeholder="Usuário" />
+    <input type="password" id="senha" placeholder="Senha" />
+    <button class="btn-login" onclick="validarLogin()">Entrar</button>
+    <button class="close-btn" onclick="fecharPopup()">Cancelar</button>
+  </div>
+</div>
+
+   <!-- =========================
+        CARROSSEL DE PARQUES EM DESTAQUE
+        ========================= -->
+   <main class="container" id="inicio">
+      <div class="list">
+         <!-- Slide 1: Parque Montanhas de Teresópolis -->
+         <div class="list-item">
+            <img src="img/inicio - parque montanhas.jpg" alt="Parque Montanhas de Teresópolis">
+            <div class="content">
+               <h2 class="title">Parque Montanhas de Teresópolis</h2>
+               <p class="description">O Parque Natural Municipal Montanhas de Teresópolis foi criado em 2009 com 5.335
+                  hectares.<br>
+                  É uma das maiores unidades municipais de conservação integral no Estado do Rio de Janeiro.<br>
+                  Preserva ecossistemas da Mata Atlântica e promove atividades de contato com a natureza.
+               </p>
+               <div class="buttons">
+                  <button type="button"><a href="./html/parque-montahas.html"  class="vermais-link">Ver
+                        Mais</a></button>
+               </div>
+            </div>
+         </div>
+         <!-- Slide 2: Parque Nacional da Serra dos Órgãos -->
+         <div class="list-item">
+            <img src="img/inicio - Serra dos órgãos.jpeg" alt="Serra dos Orgãos">
+            <div class="content">
+               <h2 class="title">Parque Nacional da Serra dos Orgãos</h2>
+               <p class="description">O Parque Nacional da Serra dos Órgãos, no RJ, protege a Mata Atlântica desde
+                  1939.<br>
+                  Com mais de 200 km de trilhas, destaca-se por cachoeiras e montanhas como o Dedo de Deus.<br>
+                  É um destino de ecoturismo e conservação da biodiversidade brasileira.
+               </p>
+               <div class="buttons">
+                  <button type="button"><a href="./html/parnaso.html" class="vermais-link">Ver
+                        Mais</a></button>
+               </div>
+            </div>
+         </div>
+         <!-- Slide 3: Parque Estadual Dos Três Picos -->
+         <div class="list-item">
+            <img src="img/inicio - Três picos.jpeg" alt="Parque Estadual Dos Três Picos">
+            <div class="content">
+               <h2 class="title">Parque Estadual Dos três Picos</h2>
+               <p class="description">O Parque Estadual dos Três Picos, criado em 2002, é a maior unidade de conservação
+                  do RJ.<br>
+                  Com 65 mil hectares, protege a Mata Atlântica e espécies ameaçadas.<br>
+                  É famoso por montanhas imponentes, como o Pico Maior, e atrai amantes do ecoturismo.
+               </p>
+               <div class="buttons">
+                  <button type="button"><a href="./html/trespicos.html"  class="vermais-link">Ver
+                        Mais</a></button>
+               </div>
+            </div>
+         </div>
+         <!-- Slide 4: Circuito Terê Verde -->
+         <div class="list-item">
+            <img src="img/inicio - circuito verde.webp" alt="circuito Terê verde">
+            <div class="content">
+               <h2 class="title">Bem-vindo ao Circuito Terê Verde!</h2>
+               <p class="description">
+                  Descubra as melhores trilhas, parques e eventos de Teresópolis.<br>
+                  Explore, aventure-se e aproveite o melhor da natureza com a gente!
+               </p>
+               
+            </div>
+         </div>
+      </div>
+
+      <!-- Miniaturas dos slides (thumbs) -->
+      <div class="thumb">
+         <div class="thumb-item">
+            <img src="img/inicio - parque montanhas.jpg" alt="Serra">
+            <div class="content">
+               <h3>Parque Montanhas Teresópolis</h3>
+            </div>
+         </div>
+         <div class="thumb-item">
+            <img src="img/inicio - Serra dos órgãos.jpeg" alt="Serra">
+            <div class="content">
+               <h3>Parque Nacional da Serra dos Orgãoes</h3>
+            </div>
+         </div>
+         <div class="thumb-item">
+            <img src="img/inicio - Três picos.jpeg" alt="Serra">
+            <div class="content">
+               <h3>Parque Estadual dos Três Picos</h3>
+            </div>
+         </div>
+         <div class="thumb-item">
+            <img src="img/inicio - circuito verde.webp" alt="Serra">
+            <div class="content">
+               <h3>Circuito Verde</h3>
+            </div>
+         </div>
+      </div>
+
+      <!-- Setas de navegação do carrossel -->
+      <div class="arrows">
+         <button class="back" type="button">&lt;</button>
+         <button class="next" type="button">&gt;</button>
+      </div>
+   </main>
+
+   <!-- =========================
+        SESSÃO TRILHAS EM DESTAQUE
+        ========================= -->
+   <h1 class="titulo_trilhas" id="trilhas">Explorando Novos Caminhos</h1>
+   <section class="trilhas">
+      <div class="card_container swiper">
+         <div class="card_content">
+            <div class="swiper-wrapper">
+               <!-- Card 1 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - cartao postal.jfif" alt="img" class="card_image">
+                     <p class="card-tag">Parnaso</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Cartão Postal</h3>
+                     <p class="card_nivel">Nível: Fácil</p>
+                     <p class="card_distancia">Distância: 2 . 8 km (Ida e volta)</p>
+                  </div>
+               </article>
+               <!-- Card 2 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - castelo do acu.jfif" alt="img" class="card_image">
+                     <p class="card-tag">Parnaso</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Castelo Do Açu</h3>
+                     <p class="card_nivel">Nível: Difícil</p>
+                     <p class="card_distancia">Distância: 16 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 3 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - mirante da agulha.jfif" alt="img" class="card_image">
+                     <p class="card-tag">Parnaso</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Mirante Da Agulha</h3>
+                     <p class="card_nivel">Nível: Difícil</p>
+                     <p class="card_distancia">Distância: 20 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 4 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - tres municipios.jpg" alt="img" class="card_image">
+                     <p class="card-tag">Três Picos</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Três Municipios</h3>
+                     <p class="card_nivel">Nível: Difícil</p>
+                     <p class="card_distancia">Distância: 12 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 5 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - vale dos deuses.jpg" alt="img" class="card_image">
+                     <p class="card-tag">Três Picos</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Vale Dos deuses</h3>
+                     <p class="card_nivel">Nível: Fácil</p>
+                     <p class="card_distancia">Distância: 5 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 6 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas-pico-medio.webp" alt="img" class="card_image">
+                     <p class="card-tag">Três Picos</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Pico Menor e Médio</h3>
+                     <p class="card_nivel">Nível: Difícil</p>
+                     <p class="card_distancia">Distância: 12 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 7 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - pedra alpina.webp" alt="img" class="card_image">
+                     <p class="card-tag">Parque Montanhas</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Pedra Alpina</h3>
+                     <p class="card_nivel">Nível: Fácil</p>
+                     <p class="card_distancia">Distância: 5 . 6 km (Ida e Volta) </p>
+                  </div>
+               </article>
+               <!-- Card 8 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - parque montanhas.jpg" alt="img" class="card_image">
+                     <p class="card-tag">Parque Montanhas</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Pedra da Tartaruga</h3>
+                     <p class="card_nivel">Nível: Fácil</p>
+                     <p class="card_distancia">Distância: 2 . 5 km (Ida e Volta). </p>
+                  </div>
+               </article>
+               <!-- Card 9 -->
+               <article class="card_article swiper-slide">
+                  <div class="card_img">
+                     <img src="img/trilhas - pedra do camelo.jpeg" alt="img" class="card_image">
+                     <p class="card-tag">Parque Montanhas</p>
+                  </div>
+                  <div class="card_informacoes">
+                     <h3 class="card_name">Pedra Do Camelo</h3>
+                     <p class="card_nivel">Nível: Fácil</p>
+                     <p class="card_distancia">Distância: 4 . 6 km (Ida e Volta). </p>
+                  </div>
+               </article>
+            </div>
+         </div>
+         <!-- Paginação do swiper -->
+         <div class="swiper-pagination"></div>
+         <!-- Botões de navegação do swiper -->
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div>
+      </div>
+   </section>
+
+   <!-- =========================
+        SESSÃO EVENTOS
+        ========================= -->
+   <h1 class="titulo_eventos" id="eventos">Agenda de Eventos</h1>
+   <div class="line_evento">
+      <div class="line"></div>
+   </div>
+
+   <section class="agenda-eventos" id="eventos">
+      <!-- Card de evento 1 -->
+      <div class="evento">
+         <div class="data-evento">
+            <h1 class="dia-evento">11</h1>
+            <p class="mes-evento">Jul|2025</p>
+         </div>
+         <div class="evento-divisao"></div>
+         <div class="evento-informacoes">
+            <h1 class="titulo-evento">Encontro De Pesquisadores Do Parnaso</h1>
+            <p class="hora-evento">14:00 às 16:00 </p>
+            <p class="endereco-evento"><i class="fa-solid fa-location-dot" style="color: #f7f7f8;"></i>Av. Rotariana , Teresópolis-RJ.</p>
+         </div>
+      </div>
+      <!-- Card de evento 2 -->
+      <div class="evento">
+         <div class="data-evento">
+            <h1 class="dia-evento">30</h1>
+            <p class="mes-evento">Jun|2025</p>
+         </div>
+         <div class="evento-divisao"></div>
+         <div class="evento-informacoes">
+            <h1 class="titulo-evento">Vem Ver O Céu </h1>
+            <p class="hora-evento">18:00 Às 21:00</p>
+            <p class="endereco-evento"><i class="fa-solid fa-location-dot" style="color: #f7f7f8;"></i>Estrada dops Três Picos. Nova Friburgo - Rj</p>
+         </div>
+      </div>
+      <!-- Card de evento 3 -->
+      <div class="evento">
+         <div class="data-evento">
+            <h1 class="dia-evento">06</h1>
+            <p class="mes-evento">Jul|2025</p>
+         </div>
+         <div class="evento-divisao"></div>
+         <div class="evento-informacoes">
+            <h1 class="titulo-evento">Vem Pedalar | PEPT </h1>
+            <p class="hora-evento">09:00 Às 12:00</p>
+            <p class="endereco-evento"> <i class="fa-solid fa-location-dot" style="color: #f7f7f8;"></i>Estrada do jacarandá, 250 - Meudon, Teresópolis - Rj</p>
+         </div>
+      </div>
+   </section>
+
+   <!-- =========================
+        RODAPÉ E CONTATOS
+        ========================= -->
+   <footer class="contatos" id="contatos">
+      <div class="redessociais">
+         <!-- Links das redes sociais -->
+         <a href="https://www.instagram.com/" <i class="fa-brands fa-instagram"
+            style="color: #29eb0f;"></i></a>
+         <a href="https://www.facebook.com/?locale=pt_BR" <i class="fa-brands fa-facebook"
+            style="color: #29eb0f;"></i></a>
+         <a href="https://web.telegram.org/"  <i class="fa-brands fa-telegram"
+            style="color: #29eb0f;"></i></a>
+         <a href="https://x.com/"  <i class="fa-brands fa-x-twitter" style="color: #29eb0f;"></i></a>
+         <a href="https://www.youtube.com/"  <i class="fa-brands fa-youtube"
+            style="color: #29eb0f;"></i></a>
+      </div>
+      <div class="mensagem">
+         <p> <i class="fa-brands fa-at" style="color: #29eb0f;"></i>grupo14@email.com</p>
+         <p> <i class="fa-brands fa-whatsapp" style="color: #29eb0f;"></i>(21) 22222-2222</p>
+         <p> <a class="nav-link" href="#inicio">Início</a></p>
+         <p> <a class="nav-link" href="#trilhas">Trilhas</a></p>
+         <p> <a class="nav-link" href="#eventos">Eventos</a></p>
+         <p> <a class="nav-link" href="#login">Login</a></p>
+      </div>
+      <div class="footer">
+         <p> Copyright &copy;2025 Designed By Grupo 14</p>
+      </div>
+   </footer>
+
+   <!-- =========================
+        SCRIPTS
+        ========================= -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="js/script.js"></script>
+</body>
+
+</html>

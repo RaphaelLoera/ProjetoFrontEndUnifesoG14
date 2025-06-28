@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/adm-trilhas.css" />
+    <title>Administração do site</title>
+  </head>
+  <body>
+    <script>
+    if (!localStorage.getItem('usuarioLogado') && !sessionStorage.getItem('usuarioLogado')) {
+      window.location.href = "html/adm.html";
+    }
+  </script>
+    <header>
+      <nav>
+        <a href="../index.html">Início</a>
+        <a href="../html/adm.html">Eventos</a>
+        <a href="../index.html"onclick="logout()">Sair</a>
+
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Formulário 1 -->
+        <div class="form-container">
+          <form>
+            <h3>Novas Trilhas</h3>
+
+             <!-- CAMPO ESCOLHA PARQUE -->
+            <label for="item">Selecione o Parque :</label>
+            <select id="item" name="item" required>
+              <option value="">-- Selecione --</option>
+              <option value="item1">Parnaso</option>
+              <option value="item2">Três Picos</option>
+              <option value="item3">Parque Montanhas</option>
+            </select>
+            <!-- CAMPO NOME DO EVENTO -->
+            <label for="titulo">Trilha</label>
+            <input type="text" placeholder="Título" />
+            <!-- CAMPO NIVEL -->
+             <label for="item">Selecione o Nível da Trilha:</label>
+            <select id="item" name="item" required>
+              <option value="">-- Selecione --</option>
+              <option value="item1">Fácil</option>
+              <option value="item2">Médio</option>
+              <option value="item3">Difícil</option>
+            </select>
+            
+              <!-- CAMPO DESCRICAO -->
+            <label for="descricao">Descrição</label>
+            <input type="text" placeholder="Descrição" />
+            
+            <!-- CAMPO ESCOLHA FOTO -->
+             <label for="foto">Escolher Foto:</label>
+             <div class="file-foto">
+               
+               <input type="file" id="foto" name="foto" accept="image/*" required>
+            </div>
+            <button type="submit">Salvar</button>
+          </form>
+
+         
+    </main>
+    <footer>
+      <p>&copy; 2025 Circuito Terê Verde. Todos os direitos reservados.</p>
+    </footer>
+           <script src="../js/script.js"></script>
+
+  </body>
+</html>

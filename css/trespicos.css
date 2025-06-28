@@ -1,0 +1,392 @@
+/* =========================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================= */
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+  box-sizing: border-box; /* Inclui borda e padding no tamanho total */
+  list-style: none; /* Remove marcadores de listas */
+}
+
+/* =========================
+   TIPOGRAFIA BÁSICA
+   ========================= */
+p {
+  font-size: 1.2rem; /* Tamanho da fonte dos parágrafos */
+  line-height: 1, 5; /* Altura da linha (corrigir para 1.5) */
+}
+
+h1 {
+  font-size: 2.5rem; /* Tamanho do título principal */
+  padding: 10px 0;   /* Espaçamento acima e abaixo */
+}
+
+h2 {
+  font-size: 2rem;   /* Tamanho do subtítulo */
+  padding: 10px 0;   /* Espaçamento acima e abaixo */
+}
+
+/* =========================
+   FUNDO E CONTAINER PRINCIPAL
+   ========================= */
+body {
+  background: #e6f7e4; /* Fundo verde claro */
+}
+
+main {
+  padding: 1rem 10rem; /* Espaçamento lateral grande em telas grandes */
+}
+
+@media (max-width: 768px) {
+  /* Espaçamento lateral menor em telas pequenas */
+}
+
+main {
+  padding: 1rem; /* Sobrescreve para telas pequenas */
+}
+
+/* =========================
+   HEADER E NAVEGAÇÃO
+   ========================= */
+.menu-principal {
+  display: flex;           /* Layout flexível */
+  width: 100%;             /* Largura total */
+  max-width: 100%;         /* Responsivo */
+  margin: auto;            /* Centraliza */
+  height: 50px;            /* Altura do header */
+  position: relative;      /* Para posicionamento absoluto dos filhos */
+  z-index: 100;            /* Sobreposição */
+}
+
+.navbar .nav-menu {
+  display: flex;           /* Flexbox */
+  justify-content: end;    /* Alinha itens à direita */
+  gap: 50px;               /* Espaço entre itens */
+}
+
+/* Barra de navegação */
+.navbar {
+  width: 100%;                       /* Largura total */
+  padding: 20px;                     /* Espaçamento interno */
+  position: absolute;                /* (sobrescrito abaixo) */
+  color: #eee;                       /* Cor do texto */
+  font-weight: 300;                  /* Peso da fonte */
+  max-width: auto;                   /* (não tem efeito, pode remover) */
+  position: fixed;                   /* Fixa no topo */
+  background: rgba(0, 0, 0, 0.289);  /* Fundo translúcido */
+  backdrop-filter: blur(3px);        /* Efeito de desfoque */
+}
+
+.btn-menu i{
+      position: fixed; /* Fixa no topo */
+
+}
+
+/* Links de navegação */
+.navbar a {
+  color: white;              /* Cor do link */
+  text-decoration: none;     /* Sem sublinhado */
+  padding: 0px 50px 10px 0;  /* Espaçamento interno */
+  position: relative;        /* Para pseudo-elementos */
+  font-size: 20px;           /* Tamanho da fonte */
+}
+
+/* Efeito de linha abaixo dos links */
+.navbar a::after {
+  content: " ";                  /* Conteúdo vazio */
+  width: 0%;                     /* Largura inicial */
+  height: 2px;                   /* Altura da linha */
+  background-color: greenyellow; /* Cor da linha */
+  position: absolute;            /* Posicionamento */
+  bottom: 0;                     /* Alinha na base */
+  left: 0;                       /* Alinha à esquerda */
+}
+
+/* Efeito de hover nos links de navegação */
+.navbar a:hover::after {
+  color: #eee;                   /* (não afeta ::after, pode remover) */
+  width: 50%;                    /* Aumenta a largura ao passar o mouse */
+  transition: 0.5s ease-in-out;  /* Animação */
+}
+
+/* Menu mobile (oculto por padrão) */
+.menu-mobile {
+  background-color: #0b05050d;   /* Fundo translúcido */
+  backdrop-filter: blur (10px);  /* Desfoque (corrigir para blur(10px)) */
+  left: 0;                       /* Alinha à esquerda */
+  width: 100%;                   /* Largura total */
+  height: 0;                     /* Altura inicial */
+  visibility: hidden;            /* Esconde o menu */
+  transition: 0.10s;             /* Animação */
+}
+
+.menu-mobile li a {
+  color: greenyellow;        /* Cor do link */
+  text-decoration: none;     /* Sem sublinhado */
+  display: block;            /* Ocupa toda a linha */
+  padding: 20px 30px;        /* Espaçamento interno */
+  font-size: 18px;           /* Tamanho da fonte */
+}
+
+/* Botão hamburguer (oculto por padrão) */
+#btn-menu {
+  background: transparent;   /* Sem fundo */
+  border: none;              /* Sem borda */
+  width: 80px;               /* Largura */
+  height: 100px;             /* Altura */
+  display: none;             /* Esconde por padrão */
+}
+#btn-menu i {
+  font-size: 40px;           /* Tamanho do ícone */
+}
+
+/* Responsividade do menu */
+@media screen and (max-width: 1030px) {
+  .navbar {
+    display: none; /* Esconde navbar em telas pequenas */
+  }
+  .menu-mobile.abrir-menu {
+   visibility: visible;                    /* Mostra menu mobile */
+    width: 80%;                 
+    height: 250px;                        /* Altura do menu */
+    background: rgba(0, 0, 0, 0.737);    /* Fundo escuro */
+    backdrop-filter: blur(3px);          /* Desfoque */
+    border-radius: 10px;                 /* Bordas arredondadas */
+    border: 1px solid white;             /* Borda branca */
+    margin-left: 55px;                  /* Espaço à direita */
+    position: fixed;                     /* Fixa o menu */
+  }
+  #btn-menu {
+    display: block;                      /* Mostra botão hamburguer */
+    width: 70px;                         /* Largura */
+    height: 50px;                        /* Altura */
+    background-color: rgba(0, 0, 0, 0.151); /* Fundo translúcido */
+    backdrop-filter: blur(3px);          /* Desfoque */
+    position: fixed;                     /* Fixa o botão */
+  }
+}
+
+/* =========================
+   TOPO DA PÁGINA (IMAGEM DESTAQUE)
+   ========================= */
+.topo {
+  display: flex;                                /* Flexbox */
+  top: 0;                                       /* Alinha no topo */
+  left: 0;                                      /* Alinha à esquerda */
+  width: 100%;                                  /* Largura total */
+  height: 550px;                                /* Altura fixa */
+  background: url(../img/3_Picos-topo.JPG) center / cover no-repeat; /* Imagem de fundo */
+  color: #fff;                                  /* Cor do texto */
+  z-index: 1000;                                /* Sobrepõe outros elementos */
+  text-align: end;                              /* Alinha texto à direita */
+  justify-content: flex-end;                    /* Alinha conteúdo à direita */
+  align-items: flex-end;                        /* Alinha conteúdo na base */
+}
+.topo h1 {
+  padding: 10px 20px;                           /* Espaçamento interno */
+}
+
+/* Responsividade do topo e títulos */
+@media (max-width: 768px) {
+  .topo h1 {
+    font-size: 25px;            /* Fonte menor */
+  }
+  .item1 h1 {
+    font-size: 25px;            /* Fonte menor */
+  }
+  .item4 h2 {
+    font-size: 25px;            /* Fonte menor */
+  }
+}
+
+/* =========================
+   SEÇÃO ITEM 1 (INTRODUÇÃO)
+   ========================= */
+.item1 {
+  margin-top: 90px;     /* Espaço acima */
+  text-align: center;   /* Centraliza texto */
+}
+
+.item1 p {
+  text-align: center;   /* Centraliza texto */
+  margin-top: 50px;     /* Espaço acima */
+}
+
+/* =========================
+   SEÇÃO ITEM 2 (IMAGEM E TEXTO)
+   ========================= */
+.item2 {
+  display: flex;                /* Flexbox */
+  flex-direction: row;          /* Linha */
+  align-items: center;          /* Centraliza verticalmente */
+  justify-content: flex-start;  /* Alinha à esquerda */
+}
+
+@media (max-width: 768px) {
+  .item2 {
+    flex-direction: column;     /* Coluna em telas pequenas */
+    align-items: center;        /* Centraliza */
+  }
+}
+
+.item2 img {
+  margin-top: 90px;             /* Espaço acima */
+  width: 100%;                  /* Largura total */
+  height: 30%;                  /* Altura relativa */
+  max-width: 600px;             /* Largura máxima */
+  padding: 2rem;                /* Espaçamento interno */
+}
+
+@media (max-width: 768px) {
+  .item2 img {
+    width: 300px;               /* Largura menor */
+    max-width: 100%;            /* Largura máxima */
+    padding: 1rem;              /* Espaçamento menor */
+  }
+}
+
+.item2 h2 {
+  padding: 1 0rem;              /* (Ajuste: deveria ser padding: 1rem 0;) */
+  text-align: center;           /* Centraliza texto */
+}
+
+.item2 p {
+  text-align: left;             /* Alinha à esquerda */
+  padding: 1 0rem;              /* (Ajuste: deveria ser padding: 1rem 0;) */
+  text-align: center;           /* Centraliza texto */
+  margin-top: 40px;             /* Espaço acima */
+}
+
+/* =========================
+   SEÇÃO ITEM 3 (CARDS)
+   ========================= */
+.item3 {
+  margin-top: 90px;             /* Espaço acima */
+  display: flex;                /* Flexbox */
+  flex-direction: row;          /* Linha */
+  align-items: center;          /* Centraliza verticalmente */
+  justify-content: center;      /* Centraliza horizontalmente */
+  padding: 2rem;                /* Espaçamento interno */
+}
+
+@media (max-width: 768px) {
+  .item3 {
+    flex-direction: column;     /* Coluna em telas pequenas */
+  }
+}
+
+.card {
+  margin-top: 60px;             /* Espaço acima */
+  width: 100%;                  /* Largura total */
+  height: 100%;                 /* Altura total */
+  display: flex;                /* Flexbox */
+  flex-direction: column;       /* Coluna */
+  justify-content: center;      /* Centraliza verticalmente */
+  align-items: center;          /* Centraliza horizontalmente */
+  text-align: center;           /* Centraliza texto */
+  padding: 10px;                /* Espaçamento interno */
+}
+
+.item3 img {
+  max-width: 200px;             /* Largura máxima */
+  border-radius: 8px;           /* Bordas arredondadas */
+  padding: 0 2rem;              /* Espaçamento lateral */
+}
+
+/* =========================
+   SEÇÃO ITEM 4 (IMAGEM E TEXTO)
+   ========================= */
+.item4 {
+  margin-top: 90px;             /* Espaço acima */
+  display: flex;                /* Flexbox */
+  flex-direction: row;          /* Linha */
+  align-items: center;          /* Centraliza verticalmente */
+  justify-content: center;      /* Centraliza horizontalmente */
+}
+
+@media (max-width: 768px) {
+  .item4 {
+    flex-direction: column;     /* Coluna em telas pequenas */
+    align-items: center;        /* Centraliza */
+    justify-content: center;    /* Centraliza */
+    text-align: center;         /* Centraliza texto */
+  }
+  .item4 img {
+    margin-left: 90px;          /* Espaço à esquerda */
+  }
+}
+
+.item4 img {
+  width: 400px;                 /* Largura fixa */
+  height: auto;                 /* Altura automática */
+  max-width: 600px;             /* Largura máxima */
+  padding: 2rem;                /* Espaçamento interno */
+  margin-right: 100px;          /* Espaço à direita */
+}
+
+.item4 h2 {
+  margin-top: 90px;             /* Espaço acima */
+  padding: 0 1rem;              /* Espaçamento lateral */
+  margin-bottom: 10px;          /* Espaço abaixo */
+}
+
+.item4 h3 {
+  margin-top: 90px;             /* Espaço acima */
+}
+
+.item4 p {
+  font-size: 1.2rem;            /* Tamanho da fonte */
+  text-align: left;             /* Alinha à esquerda */
+  padding: 1rem;                /* Espaçamento interno */
+}
+
+@media (max-width: 768px) {
+  .item4 p {
+    text-align: center;         /* Centraliza texto em telas pequenas */
+  }
+}
+
+/* =========================
+   MAPA RESPONSIVO
+   ========================= */
+.map-responsive {
+  position: relative;           /* Para posicionamento absoluto do iframe */
+  overflow: hidden;             /* Esconde overflow */
+  padding-bottom: 56.25%;       /* Proporção 16:9 */
+  height: 0;                    /* Altura inicial */
+  margin: 0 auto;               /* Centraliza na página */
+  max-width: 800px;             /* Limite de largura */
+}
+
+.item5 {
+  margin: 0 0;                  /* Remove margens */
+  align-items: center;          /* Centraliza verticalmente */
+  justify-content: center;      /* Centraliza horizontalmente */
+}
+
+.item5 h2 {
+  margin-top: 90px;             /* Espaço acima */
+}
+
+.map-responsive iframe {
+  position: absolute;           /* Sobrepõe */
+  top: 10px;                    /* Espaço do topo */
+  left: 80px;                   /* Espaço da esquerda */
+  margin-bottom: 0;             /* Remove margem abaixo */
+  width: 70%;                   /* Largura do mapa */
+  height: 70%;                  /* Altura do mapa */
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  text-align: center;           /* Centraliza texto */
+  padding: 1rem;                /* Espaçamento interno */
+  background-color: #528655;    /* Fundo verde */
+  font-size: 0.9rem;            /* Tamanho da fonte */
+}
+
+.map-responsive {
+  margin-top: 90px;             /* Espaço acima */
+}

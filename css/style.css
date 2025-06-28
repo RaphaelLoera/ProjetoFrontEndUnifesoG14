@@ -1,0 +1,895 @@
+/* =========================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================= */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    box-sizing: border-box; /* Inclui borda e padding no tamanho total */
+    list-style-type: none; /* Remove marcadores de listas */
+    text-decoration: none; /* Remove sublinhado de links */
+    font-family: "Montserrat", sans-serif; /* Fonte padrão */
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+}
+
+/* =========================
+   ESTILO DO CORPO DA PÁGINA
+   ========================= */
+body {
+    color: #eee; /* Cor do texto */
+    font-size: 12px; /* Tamanho da fonte */
+    overflow-x: hidden; /* Esconde rolagem horizontal */
+    background: linear-gradient(#8f6b42, #2D3335, #000000); /* Fundo degradê */
+}
+
+/* =========================
+   HEADER E NAVEGAÇÃO
+   ========================= */
+
+/* Cabeçalho principal */
+.menu-principal {
+    display: flex; /* Layout flexível */
+    width: 100%; /* Largura máxima do header */
+    max-width: 100%; /* Responsivo */
+    margin: auto; /* Centraliza */
+    height: 50px; /* Altura do header */
+    position: relative; /* Para posicionamento absoluto dos filhos */
+    z-index: 100; /* Sobreposição */
+}
+
+/* Menu de navegação padrão (desktop) */
+.navbar .nav-menu {
+    display: flex; /* Flexbox */
+    justify-content: end; /* Alinha itens à direita */
+    gap: 50px; /* Espaço entre itens */
+}
+
+/* Barra de navegação */
+.navbar {
+    width: 100%; /* Largura total */
+    padding: 20px; /* Espaçamento interno */
+    position: absolute; /* (sobrescrito abaixo) */
+    color: #eee; /* Cor do texto */
+    font-weight: 300; /* Peso da fonte */
+    max-width: auto; /* (não tem efeito, pode remover) */
+    position: fixed; /* Fixa no topo */
+    background: rgba(0, 0, 0, 0.289); /* Fundo translúcido */
+    backdrop-filter: blur(3px); /* Efeito de desfoque */
+}
+
+/* Links de navegação */
+.navbar a {
+    color: white; /* Cor do link */
+    text-decoration: none; /* Sem sublinhado */
+    padding: 0px 50px 10px 0; /* Espaçamento interno */
+    position: relative; /* Para pseudo-elementos */
+    font-size: 20px; /* Tamanho da fonte */
+}
+
+.navbar .botao-login{
+        cursor: pointer; /* Cursor de mão */
+
+}
+
+/* Efeito de linha abaixo dos links */
+.navbar a::after {
+    content: " "; /* Conteúdo vazio */
+    width: 0%; /* Largura inicial */
+    height: 2px; /* Altura da linha */
+    background-color: greenyellow; /* Cor da linha */
+    position: absolute; /* Posicionamento */
+    bottom: 0; /* Alinha na base */
+    left: 0; /* Alinha à esquerda */
+}
+
+/* Efeito de hover nos links de navegação */
+.navbar a:hover::after {
+    color: #eee; /* (não afeta ::after, pode remover) */
+    width: 50%; /* Aumenta a largura ao passar o mouse */
+    transition: 0.5s ease-in-out; /* Animação */
+}
+
+/* Menu mobile (oculto por padrão) */
+.menu-mobile {
+    background-color: #0b05050d; /* Fundo translúcido */
+    backdrop-filter: blur(10px); /* Desfoque */
+    left: 70px; /* Alinha à esquerda */
+    width: 70%; /* Largura total */
+    height: 0; /* Altura inicial */
+    visibility: hidden; /* Esconde o menu */
+    transition: 0.10s; /* Animação */
+}
+
+.mobile-login {
+    cursor: pointer;
+}
+
+/* Itens do menu mobile */
+.menu-mobile li a {
+    color: greenyellow; /* Cor do link */
+    text-decoration: none; /* Sem sublinhado */
+    display: block; /* Ocupa toda a linha */
+    padding: 20px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+}
+
+/* Botão hamburguer (oculto por padrão) */
+#btn-menu {
+    background: transparent; /* Sem fundo */
+    border: none; /* Sem borda */
+    width: 80px; /* Largura */
+    height: 100px; /* Altura */
+    display: none; /* Esconde por padrão */
+}
+
+#btn-menu i {
+    font-size: 40px; /* Tamanho do ícone */
+}
+
+/* Responsividade do menu */
+@media  (max-width: 1030px) {
+    .navbar {
+        display: none; /* Esconde navbar em telas pequenas */
+    }
+    .menu-mobile.abrir-menu {
+        visibility: visible; /* Mostra menu mobile */
+        height: 50vh; /* Altura do menu */
+        background: rgba(0, 0, 0, 0.737); /* Fundo escuro */
+        backdrop-filter: blur(3px); /* Desfoque */
+        border-radius: 30px; /* Bordas arredondadas */
+        border: 1px solid white; /* Borda branca */
+        margin-right: 25px; /* Espaço à direita */
+        margin-top: 30px; /* Espaço acima */
+        position: fixed; 
+    }
+    #btn-menu {
+    display: block; /* Mostra botão hamburguer */  
+    display: block;                      /* Mostra botão hamburguer */
+    width: 70px;                         /* Largura */
+    height: 50px;                        /* Altura */
+    background-color: rgba(0, 0, 0, 0.151); /* Fundo translúcido */
+    backdrop-filter: blur(3px);          /* Desfoque */
+    position: fixed;                     /* Fixa o botão */
+  }
+    
+}
+
+/* =========================
+   CONTAINER PRINCIPAL E LISTA DESTAQUE
+   ========================= */
+
+/* Container principal */
+.container {
+    height: 100vh; /* Altura da viewport */
+    width: 100vw; /* Largura da viewport */
+    margin-top: -50px; /* Sobe o container */
+    overflow: hidden; /* Esconde overflow */
+    position: relative; /* Para posicionamento absoluto dos filhos */
+}
+
+/* Itens da lista principal */
+.container .list .list-item {
+    inset: 0 0 0 0; /* Preenche todo o container */
+    position: absolute; /* Sobrepõe os itens */
+}
+
+/* Imagens dos itens da lista */
+.container .list .list-item img {
+    object-fit: cover; /* Cobre todo o espaço */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    filter: brightness(50%); /* Escurece a imagem */
+}
+
+/* Conteúdo sobreposto nas imagens */
+.container .list .list-item .content {
+    position: absolute; /* Sobrepõe a imagem */
+    top: 20%; /* Distância do topo */
+    right: 10%; /* Distância da direita */
+    padding-right: 50px; /* Espaço à direita */
+    width: 80%; /* Largura */
+    color: #eee; /* Cor do texto */
+    text-shadow: 0 5px 10px #0004; /* Sombra no texto */
+}
+
+/* Título dos itens */
+.container .list .list-item .title {
+    font-size: 40px; /* Tamanho grande */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 1.3em; /* Espaço abaixo */
+}
+
+/* Descrição dos itens */
+.container .list .list-item .description {
+    font-size: 17px; /* Tamanho da fonte */
+}
+
+/* Botões dentro do conteúdo */
+.container .list .list-item .content .buttons {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(2, 130px); /* Duas colunas */
+    grid-template-rows: 40px; /* Altura das linhas */
+    gap: 20px; /* Espaço entre botões */
+    margin-top: 20px; /* Espaço acima */
+}
+
+/* Link "ver mais" */
+.container .list .list-item .content .buttons .vermais-link {
+    color: greenyellow; /* Cor do link */
+}
+
+
+
+/* Primeiro botão com estilo diferenciado */
+.container .list .list-item .buttons button:nth-child(1) {
+    background-color: #eee4; /* Fundo translúcido */
+    color: greenyellow; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: none; /* Sem borda */
+    letter-spacing: 3px; /* Espaçamento entre letras */
+    cursor: pointer; /* Cursor de mão */
+    font-weight: 500; /* Peso da fonte */
+    text-transform: uppercase; /* Letras maiúsculas */
+}
+
+/* Efeito hover nos botões */
+.container .list .list-item .buttons button:hover {
+    background-color: black; /* Fundo preto */
+    color: greenyellow; /* Texto verde-limão */
+    border: 1px solid greenyellow; /* Borda verde-limão */
+    transition: 0.9s; /* Animação */
+}
+
+/* =========================
+   MINIATURAS (THUMBS) E SETAS
+   ========================= */
+
+/* Miniaturas (thumbs) */
+.container .thumb {
+    position: absolute; /* Sobrepõe */
+    bottom: 50px; /* Distância da base */
+    left: 50%; /* Centraliza horizontalmente */
+    width: max-content; /* Largura mínima necessária */
+    z-index: 100; /* Sobrepõe outros elementos */
+    display: flex; /* Flexbox */
+    gap: 20px; /* Espaço entre thumbs */
+}
+
+/* Esconde thumbs em telas menores */
+@media screen and (max-width: 1381px) {
+    .container .thumb {
+        display: none; /* Esconde thumbs */
+    }
+}
+
+/* Ajuste de fontes em telas pequenas */
+@media screen and (max-width: 658px) {
+    .container .list .list-item .description {
+        font-size: 15px; /* Fonte menor */
+    }
+    .container .list .list-item .title {
+        font-size: 25px; /* Fonte menor */
+    }
+}
+
+/* Cada thumb individual */
+.container .thumb .thumb-item {
+    width: 150px; /* Largura */
+    height: 220px; /* Altura */
+    position: relative; /* Para conteúdo interno */
+    flex-shrink: 0; /* Não encolhe */
+}
+
+/* Imagem da thumb */
+.container .thumb .thumb-item img {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Cobre todo o espaço */
+    border-radius: 20px; /* Bordas arredondadas */
+    filter: brightness(80%); /* Escurece */
+}
+
+/* Conteúdo da thumb */
+.container .thumb .content {
+    position: absolute; /* Sobrepõe */
+    bottom: 10px; /* Distância da base */
+    left: 10px; /* Distância da esquerda */
+    right: 10px; /* Distância da direita */
+}
+
+/* Setas de navegação */
+.container .arrows {
+    position: absolute; /* Sobrepõe */
+    top: 80%; /* Distância do topo */
+    right: 52%; /* Distância da direita */
+    width: 300px; /* Largura */
+    max-width: 30%; /* Largura máxima */
+    display: flex; /* Flexbox */
+    gap: 10px; /* Espaço entre botões */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Botões das setas */
+.container .arrows button {
+    width: 40px; /* Largura */
+    height: 40px; /* Altura */
+    border-radius: 50%; /* Botão redondo */
+    background-color: #eee4; /* Fundo translúcido */
+    border: none; /* Sem borda */
+    font-family: monospace; /* Fonte monoespaçada */
+    color: greenyellow; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    font-size: large; /* Tamanho da fonte */
+    transition: .5s; /* Animação */
+    cursor: pointer; /* Cursor de mão */
+}
+
+/* Hover nas setas */
+.container .arrows button:hover {
+    background-color: black; /* Fundo preto */
+    color: greenyellow; /* Texto verde-limão */
+    border: 1px solid greenyellow; /* Borda verde-limão */
+}
+
+/* Efeito de destaque no item ativo ao voltar */
+.container.back .list .list-item:nth-child(1) {
+    z-index: 1; /* Sobrepõe */
+}
+
+/* Animação de entrada do conteúdo do último item */
+.container .list .list-item:nth-last-child(1) .content,
+.container .list .list-item:nth-last-child(1) .content .description,
+.container .list .list-item:nth-last-child(1) .content .buttons {
+    transform: translateY(50px); /* Move para baixo */
+    filter: blur(20px); /* Aplica blur */
+    opacity: 0; /* Invisível */
+    animation: showContent 0.5s linear 1 forwards; /* Animação de entrada */
+}
+
+/* Keyframes para mostrar conteúdo */
+@keyframes showContent {
+    to {
+        transform: translateY(0); /* Volta ao lugar */
+        filter: blur(0); /* Remove blur */
+        opacity: 1; /* Visível */
+    }
+}
+
+/* Delays para animação em cascata */
+.container .list .list-item:nth-last-child(1) .content {
+    animation-delay: 0.2s; /* Delay para o conteúdo */
+}
+.container .list .list-item:nth-last-child(1) .content .description {
+    animation-delay: 0.3s; /* Delay para a descrição */
+}
+.container .list .list-item:nth-last-child(1) .content .buttons {
+    animation-delay: 0.4s; /* Delay para os botões */
+}
+
+/* Animação da imagem principal ao avançar */
+.container.next .list .list-item:nth-last-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 20px;
+    animation: showMainImage 0.3s linear 1 forwards;
+}
+
+/* Keyframes para mostrar imagem principal */
+@keyframes showMainImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+/* Animação da imagem principal ao voltar */
+.container.back .list .list-item:nth-child(1) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    animation: hideMainImage 0.5s linear 1 forwards;
+    z-index: 2;
+}
+
+/* Keyframes para esconder imagem principal */
+@keyframes hideMainImage {
+    to {
+        width: 150px;
+        height: 250px;
+        border-radius: 10px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+/* Animação das thumbs ao avançar */
+.container.next .thumb {
+    animation: effectNextThumb 0.5s linear 1 forwards;
+}
+
+/* Keyframes para efeito nas thumbs */
+@keyframes effectNextThumb {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+/* Efeito para a última thumb ao avançar */
+.container.next .thumb .thumb-item:nth-last-child(1) {
+    width: 0;
+    overflow: hidden;
+    animation: effectLastThumb .1s linear 1 forwards;
+}
+
+/* Keyframes para esconder a última thumb */
+@keyframes effectLastThumb {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+/* =========================
+   SESSÃO TRILHAS
+   ========================= */
+
+/* Título da sessão trilhas */
+.titulo_trilhas {
+    font-size: 33px; /* Tamanho do título */
+    color: greenyellow; /* Cor do título */
+    margin-top: 200px; /* Espaço acima */
+    text-align: center; /* Centraliza texto */
+}
+
+/* Container das trilhas */
+.trilhas {
+    margin-top: 150px; /* Espaço acima */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    max-height: 100vw; /* Altura máxima */
+}
+
+/* Container dos cards de trilha */
+.card_container {
+    padding-block: 70px; /* Espaço acima e abaixo */
+}
+
+/* Conteúdo dos cards */
+.card_content {
+    border-radius: 16px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde overflow */
+    background: transparent; /* Fundo transparente */
+    padding: 8px 36px; /* Espaçamento interno */
+}
+
+/* Card individual */
+.card_article {
+    width: 380px; /* Largura */
+    min-height: 20px; /* Altura mínima */
+    border-radius: 18px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde overflow */
+    box-shadow: 1px 1px 14px rgb(101, 253, 55); /* Sombra */
+}
+
+/* Tag do card */
+.card-tag {
+    position: absolute; /* Sobrepõe */
+    left: 25px; /* Distância da esquerda */
+    top: 25px; /* Distância do topo */
+    color: greenyellow; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    padding: 5px 15px; /* Espaçamento interno */
+    background: black; /* Fundo preto */
+    border-radius: 30px; /* Bordas arredondadas */
+    font-weight: 600; /* Negrito */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 0.7px; /* Espaçamento entre letras */
+}
+
+/* Imagem do card */
+.card_image {
+    position: relative; /* Para posicionamento interno */
+    width: 100%; /* Largura total */
+    height: 220px; /* Altura */
+    border-radius: 20px 20px 20px 20px; /* Bordas arredondadas */
+    padding: 5px; /* Espaço interno */
+}
+
+/* Informações do card */
+.card_informacoes {
+    background-color: black; /* Fundo preto */
+    padding: 16px 25px; /* Espaçamento interno */
+    text-align: start; /* Alinha à esquerda */
+    position: relative; /* Para posicionamento interno */
+    margin-top: -16px; /* Sobe a div */
+    z-index: 10; /* Sobrepõe */
+    border-radius: 0 0 20px 20px; /* Bordas arredondadas embaixo */
+}
+
+/* Imagem do card (ajuste) */
+.card_img {
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    z-index: 5; /* Sobrepõe */
+}
+
+/* Nome da trilha */
+.card_name {
+    color: rgb(249, 251, 246); /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo */
+    font-size: 23px; /* Tamanho da fonte */
+}
+
+/* Nível e distância */
+.card_nivel {
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    margin-bottom: 16px; /* Espaço abaixo */
+    color: greenyellow; /* Cor do texto */
+}
+
+.card_distancia {
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    margin-bottom: 2px; /* Espaço abaixo */
+    color: greenyellow; /* Cor do texto */
+}
+
+/* Swiper customização */
+.swiper-button-prev,
+.swiper-button-next {
+    color: greenyellow; /* Cor dos botões */
+}
+
+.swiper-button-prev {
+    margin-left: 0; /* Sem margem à esquerda */
+}
+
+.swiper-button-next {
+    right: 0; /* Alinha à direita */
+}
+
+.swiper-pagination-bullet {
+    background-color: greenyellow; /* Cor dos bullets */
+}
+
+/* Responsividade Swiper */
+@media screen and (max-width: 320px) {
+    .card_data {
+        padding: 16px; /* Espaçamento interno */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none; /* Esconde botões em telas pequenas */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card_content {
+        margin-inline: 48px; /* Espaço lateral */
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .card_container {
+        max-width: 1280px; /* Largura máxima */
+    }
+    .swiper-button-next {
+        right: 16px; /* Alinha à direita */
+    }
+    .swiper-button-prev {
+        left: 16px; /* Alinha à esquerda */
+    }
+}
+
+/* =========================
+   SESSÃO EVENTOS
+   ========================= */
+
+/* Título da sessão eventos */
+.titulo_eventos {
+    font-size: 33px; /* Tamanho do título */
+    color: greenyellow; /* Cor do título */
+    margin-top: 200px; /* Espaço acima */
+    text-align: start; /* Alinha à esquerda */
+    margin-left: 50px; /* Espaço à esquerda */
+}
+.evento i {
+    padding: 10px;
+}
+
+/* Linha decorativa da sessão eventos */
+.line_evento {
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.line {
+    width: 80%; /* Largura */
+    height: 1px; /* Altura */
+    margin-left: 390px; /* Espaço à esquerda */
+    margin-top: -35px; /* Sobe a linha */
+    background: greenyellow; /* Cor da linha */
+    display: block; /* Exibe como bloco */
+}
+
+/* Container dos eventos */
+.agenda-eventos {
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    margin-top: 100px; /* Espaço acima */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    background: transparent; /* Fundo transparente */
+    flex-direction: column; /* Coluna */
+}
+
+/* Responsividade eventos */
+@media  (max-width: 749px) {
+    .agenda-eventos {
+        padding: 16px; /* Espaçamento interno */
+    }
+    .titulo_eventos {
+        font-size: 28px; /* Fonte menor */
+    }
+    
+    .evento .titulo-evento{
+        font-size: 13px;
+        margin-left: 70px;
+        margin-bottom: 30px;
+        
+        
+    }
+    .evento .hora-evento {
+        font-size: 12px;
+        margin-left: 160px;
+        margin-bottom: 30px;
+
+    }
+    .evento .endereco-evento{
+        font-size: 12px;
+        margin-left: 130px;
+        margin-bottom: 60px;
+        
+        
+    }
+    .evento {
+        display: flex;
+        flex-direction: column;
+    }
+    .evento .dia-evento{
+        margin-top: 50px;
+
+    }
+    .evento .mes-evento {
+        margin-top: 15px;
+        margin-right: 90px;
+    }
+}
+
+
+
+/* Card de evento */
+.evento {
+    width: 90vh; /* Largura */
+    min-width: 40%; /* Largura mínima */
+    max-width: 90vw; /* Largura máxima */
+    height: auto; /* Altura automática */
+    border-radius: 70px; /* Bordas arredondadas */
+    margin-top: 100px; /* Espaço acima */
+    background: transparent; /* Fundo transparente */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 50px; /* Espaço entre itens */
+    border: 1px solid greenyellow; /* Borda verde-limão */
+    box-shadow: 1px 1px 14px rgb(241, 241, 241); /* Sombra */
+}
+
+/* Data do evento */
+.dia-evento {
+    margin-top: 5px; /* Espaço acima */
+    margin-left: 85px; /* Espaço à esquerda */
+    font-size: 45px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    color: greenyellow; /* Cor do texto */
+}
+
+.mes-evento {
+    margin-left: 40px; /* Espaço à esquerda */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    color: greenyellow; /* Cor do texto */
+    margin-bottom: 10px; /* Espaço abaixo */
+    text-transform: uppercase; /* Letras maiúsculas */
+}
+
+/* Divisão visual do evento */
+.evento-divisao {
+    width: 1px; /* Largura */
+    height: 40px; /* Altura */
+    background: greenyellow; /* Cor da linha */
+}
+
+/* Responsividade linha e divisão */
+@media (max-width: 1020px) {
+    .line {
+        display: none; /* Esconde linha */
+    }
+    .evento-divisao {
+        display: none; /* Esconde divisão */
+    }
+    .mensagem {
+        flex-direction: column; /* Coluna */
+        align-items: center; /* Centraliza */
+    }
+}
+
+/* Informações do evento */
+.evento-informacoes {
+    width: 60vh; /* Largura */
+    height: auto; /* Altura automática */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Coluna */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+/* Título do evento */
+.titulo-evento {
+    color: greenyellow; /* Cor do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 300; /* Peso da fonte */
+    margin-top: 20px; /* Espaço acima */
+    margin-right: 100px; /* Espaço à direita */
+}
+
+/* Hora do evento */
+.hora-evento {
+    color: greenyellow; /* Cor do texto */
+    font-weight: 300; /* Peso da fonte */
+    line-height: 4; /* Altura da linha */
+    margin-right: 190px; /* Espaço à direita */
+}
+
+/* Endereço do evento */
+.endereco-evento {
+    color: greenyellow; /* Cor do texto */
+    font-weight: 300; /* Peso da fonte */
+    margin-bottom: 20px; /* Espaço abaixo */
+    margin-right: 130px; /* Espaço à direita */
+}
+
+/* =========================
+   FOOTER E CONTATOS
+   ========================= */
+
+/* Rodapé */
+.footer {
+    color: greenyellow; /* Cor do texto */
+    background: transparent; /* Fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza texto */
+    margin-top: 30px; /* Espaço acima */
+}
+
+/* Contatos */
+.contatos {
+    width: 100%; /* Largura total */
+    margin-top: 200px; /* Espaço acima */
+    padding: 70px 30px 20px; /* Espaçamento interno */
+}
+
+/* Redes sociais */
+.redessociais {
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 20px; /* Espaço acima */
+}
+
+.redessociais a {
+    text-decoration: none; /* Sem sublinhado */
+    padding: 10px; /* Espaçamento interno */
+    background: transparent; /* Fundo transparente */
+    margin: 10px; /* Espaço entre ícones */
+    border-radius: 50%; /* Ícone redondo */
+    font-size: 35px; /* Tamanho do ícone */
+}
+
+/* Mensagem de contato */
+.mensagem {
+    margin-top: 60px; /* Espaço acima */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.mensagem a {
+    color: greenyellow; /* Cor do link */
+    display: none; /* Esconde por padrão */
+}
+
+.mensagem i {
+    text-decoration: none; /* Sem sublinhado */
+    padding: 10px; /* Espaçamento interno */
+    background: transparent; /* Fundo transparente */
+    margin-top: 30px; /* Espaço acima */
+    font-size: 18px; /* Tamanho do ícone */
+}
+
+.mensagem p {
+    color: greenyellow; /* Cor do texto */
+    font-size: 15px; /* Tamanho da fonte */
+    text-decoration: none; /* Sem sublinhado */
+    font-weight: 300; /* Peso da fonte */
+}
+
+/* Responsividade mensagem */
+@media (max-width: 667px) {
+    .mensagem a {
+        display: block; /* Mostra link */
+        margin-top: 10px; /* Espaço acima */
+        padding: 10px; /* Espaçamento interno */
+    }
+}
+
+/*popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px #000;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+}
+
+.popup-content .btn-login {
+  background: #03a9f4;
+  width: 80px;
+}
+
+.close-btn {
+  background: #444;
+  color: white;
+  width: 80px;
+
+}
